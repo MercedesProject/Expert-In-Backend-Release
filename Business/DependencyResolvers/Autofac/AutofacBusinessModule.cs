@@ -36,6 +36,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<FavoriteJobManager>().As<IFavoriteJobService>().SingleInstance();
             builder.RegisterType<EfFavoriteJobDal>().As<IFavoriteJobDal>().SingleInstance();
 
+            builder.RegisterType<ApplicationJobManager>().As<IApplicationJobService>().SingleInstance();
+            builder.RegisterType<EfApplicationJobDal>().As<IApplicationJobDal>().SingleInstance();
+
 
             builder.RegisterType<CompanyManager>().As<ICompanyService>().SingleInstance();
             builder.RegisterType<EfCompanyDal>().As<ICompanyDal>().SingleInstance();

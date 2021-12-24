@@ -49,8 +49,9 @@ namespace Business.Constants
 
         public static string ExperienceAdded = "Deneyim ekledi";
         public static string ExperienceDeleted = "Deneyim silindi";
-        public static string ExperienceUpdated = "Deneyim güncellendi";
+        public static string ExperienceUpdated = "Deneyim güncellendi"; 
 
-        
+        public static string ApplicationReceived = "Başvurunuz alındı.";
+        public static string ApplicationCancel = "Başvurunuz iptal edildi."; 
     }
 }
