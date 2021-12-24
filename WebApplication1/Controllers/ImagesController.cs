@@ -42,7 +42,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("delete")]
-
         public IActionResult Delete(Image image)
         {
             var result = _imageService.Delete(image);

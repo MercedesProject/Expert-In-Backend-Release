@@ -58,6 +58,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProjectManager>().As<IProjectService>().SingleInstance();
             builder.RegisterType<EfProjectDal>().As<IProjectDal>().SingleInstance();
 
+            builder.RegisterType<CurriculumVitaeManager>().As<ICurriculumVitaeService>().SingleInstance();
+            builder.RegisterType<EfCurriculumVitaeDal>().As<ICurriculumVitaeDal>().SingleInstance();
+
 
             builder.RegisterType<FileHelperManager>().As<IFileHelper>().SingleInstance();
             builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>();

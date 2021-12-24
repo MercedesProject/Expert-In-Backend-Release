@@ -69,7 +69,7 @@ namespace Business.Concrete
             //{
             //    return new ErrorDataResult<List<Image>>(GetDefaultImage(id).Data);
             //}
-            return new SuccessDataResult<List<Image>>(_imageDal.GetAll(i => i.ImagesId == id));
+            return new SuccessDataResult<List<Image>>(_imageDal.GetAll(i => i.UserId == id));
         }
 
         public IResult Update(IFormFile file, Image image)
