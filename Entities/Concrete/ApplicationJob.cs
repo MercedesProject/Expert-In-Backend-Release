@@ -12,6 +12,6 @@ namespace Entities.Concrete
         public int ApplicationJobId { get; set; } //PK
         public int JobId { get; set; } //FK
         public int EmployerId { get; set; } //FK
-        public String ApplicationJobStatus { get; set; }
+        public string ApplicationJobStatus { get; set; }
     }
 }
