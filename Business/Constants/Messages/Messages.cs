@@ -55,5 +55,8 @@ namespace Business.Constants
         public static string ApplicationCancel = "Başvurunuz iptal edildi.";
 
         public static string CurriculumVitaeAdd = "Cv yüklendi";
+
+        public static string DraftJobAdded = "İlan Taslağı Oluşturuldu."; 
+        public static string DraftJobsListed = "İlan Taslağı Listelendi."; 
     }
 }

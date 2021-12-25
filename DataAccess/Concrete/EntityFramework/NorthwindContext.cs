@@ -35,5 +35,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<CurriculumVitae> CurriculumVitaes { get; set; }
+        public DbSet<DraftJob> DraftJobs { get; set; }
     }
 }

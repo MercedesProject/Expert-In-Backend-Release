@@ -39,6 +39,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ApplicationJobManager>().As<IApplicationJobService>().SingleInstance();
             builder.RegisterType<EfApplicationJobDal>().As<IApplicationJobDal>().SingleInstance();
 
+            builder.RegisterType<DraftJobManager>().As<IDraftJobService>().SingleInstance();
+            builder.RegisterType<EfDraftJobDal>().As<IDraftJobDal>().SingleInstance();
+
 
             builder.RegisterType<CompanyManager>().As<ICompanyService>().SingleInstance();
             builder.RegisterType<EfCompanyDal>().As<ICompanyDal>().SingleInstance();
