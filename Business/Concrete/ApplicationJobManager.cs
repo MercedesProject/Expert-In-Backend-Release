@@ -14,9 +14,11 @@ namespace Business.Concrete
     public class ApplicationJobManager : IApplicationJobService
     {
         IApplicationJobDal _applicationJobDal;
-        public ApplicationJobManager(IApplicationJobDal applicationJobDal)
+        private IEmployerService _employerService;
+        public ApplicationJobManager(IApplicationJobDal applicationJobDal, IEmployerService employerService)
         {
             _applicationJobDal = applicationJobDal;
+            _employerService = employerService;
 
         }
         public IResult Add(ApplicationJob applicationJob)
@@ -29,6 +31,15 @@ namespace Business.Concrete
         {
             _applicationJobDal.Delete(applicationJob);
             return new SuccessResult(Messages.ApplicationCancel);
+        }
+
+        public IResult DuplicateApplication(int employerId)
+        {
+            if (_employerService.GetById(employerId) != null)
+            {
+                return new ErrorResult(Messages.DuplicateApplication);
+            }
+            return new SuccessResult();
         }
 
         public IDataResult<List<ApplicationJob>> GetAllByEmployerId(int id)

@@ -12,6 +12,7 @@ namespace Business.Abstract
     {
         IDataResult<List<ApplicationJob>> GetAllByEmployerId(int id); //çalışanın başvurduğu ilanlar
         IDataResult<List<ApplicationJob>> GetByAppliedJobId(int jobId);  // bir ilandaki başvuranlar
+        IResult DuplicateApplication(int employerId);
         IResult Add(ApplicationJob applicationJob);
         IResult Delete(ApplicationJob applicationJob);
     }

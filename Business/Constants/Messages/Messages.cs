@@ -53,6 +53,7 @@ namespace Business.Constants
 
         public static string ApplicationReceived = "Başvurunuz alındı.";
         public static string ApplicationCancel = "Başvurunuz iptal edildi.";
+        public static string DuplicateApplication = "Bu ilana zaten başvurdunuz.";
 
         public static string CurriculumVitaeAdd = "Cv yüklendi";
 
