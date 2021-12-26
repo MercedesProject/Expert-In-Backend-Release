@@ -24,15 +24,17 @@ namespace DataAccess.Concrete.EntityFramework
                                  CompanyName = c.CompanyName,
                                  CompanyLocation = c.CompanyLocation,
                                  JobId = j.JobId,
+                                 CompanyId = j.CompanyId,
                                  JobName = j.JobName,
                                  JobDescription = j.JobDescription,
                                  JobType = j.JobType,
                                  JobForm = j.JobForm,
                                  JobSalary = j.JobSalary,
-                                 //JobStartDate = j.JobStartDate,
-                                 //JobEndDate = j.JobEndDate,
-                                 //JobApplyLastDate = j.JobApplyLastDate,
-                                 //JobWeekDay = j.JobWeekDay
+                                 JobStartDate = j.JobStartDate,
+                                 JobEndDate = j.JobEndDate,
+                                 JobApplyLastDate = j.JobApplyLastDate,
+                                 JobWeekDay = j.JobWeekDay
+                                 
                              };
                 return result.ToList();
             }
