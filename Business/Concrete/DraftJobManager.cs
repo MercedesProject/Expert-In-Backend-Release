@@ -30,6 +30,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DraftJobAdded);
         }
 
+        public IResult Delete(DraftJob DraftJob)
+        {
+            _DraftJobDal.Delete(DraftJob);
+            return new SuccessResult(Messages.DraftJobAdded);
+        }
+
 
         public IDataResult<List<DraftJob>> GetAll()
         {

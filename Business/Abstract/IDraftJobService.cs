@@ -14,6 +14,7 @@ namespace Business.Abstract
         IResult Add(DraftJob DraftJob); //void
         //void oldugu icin idataresult yapmadık (void fonksiyon oldugu icin)
         IResult Update(DraftJob DraftJob);
+        IResult Delete(DraftJob DraftJob);
 
         //RESTFUL --> HTTP -->
     }

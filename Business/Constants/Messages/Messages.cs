@@ -58,6 +58,10 @@ namespace Business.Constants
         public static string CurriculumVitaeAdd = "Cv yüklendi";
 
         public static string DraftJobAdded = "İlan Taslağı Oluşturuldu."; 
-        public static string DraftJobsListed = "İlan Taslağı Listelendi."; 
+        public static string DraftJobsListed = "İlan Taslağı Listelendi.";
+
+        public static string CompanyDeleted = "şirket silindi";
+        public static string JobUpdated = "job updated";
+        public static string JobDeleted = "job deleted"; //todo tugba
     }
 }

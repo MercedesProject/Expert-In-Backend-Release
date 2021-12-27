@@ -53,8 +53,8 @@ namespace Business.Concrete
 
         public IResult Update(Job Job)
         {
-            //eksik
-            throw new NotImplementedException();
+            _jobDal.Update(Job);
+            return new SuccessResult(Messages.JobUpdated);
         }
 
         public IDataResult<List<JobDetailDto>> GetJobDetails()
@@ -64,6 +64,12 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<JobDetailDto>>(Messages.MaintenanceTime);
             }
             return new SuccessDataResult<List<JobDetailDto>>(_jobDal.GetJobDetails());
+        }
+
+        public IResult Delete(Job Job)
+        {
+            _jobDal.Delete(Job);
+            return new SuccessResult(Messages.JobDeleted);
         }
 
     }

@@ -11,6 +11,9 @@ namespace WebAPI.Controllers
         //Loosely coupled
         //Ioc Container -- Inversion of Controller (Startup.cs)
         IJobService _jobService; //naming conventeion
+        IApplicationJobService _applicationJobService; //naming conventeion
+        IFavoriteJobService _favoriteJobService; //naming conventeion
+        IDraftJobService _draftJobService; //naming conventeion
 
         public JobsController(IJobService jobService)
         {
@@ -47,6 +50,30 @@ namespace WebAPI.Controllers
         public IActionResult Add(Job job)
         {
             var result = _jobService.Add(job);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpDelete("delete")]
+        public IActionResult Delete(Job job)
+        {
+            var result = _jobService.Delete(job);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpPost("update")]
+        public IActionResult Update(Job job)
+        {
+            var result = _jobService.Update(job);
             if (result.Success)
             {
                 return Ok(result);

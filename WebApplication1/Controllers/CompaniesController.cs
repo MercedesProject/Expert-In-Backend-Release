@@ -49,6 +49,18 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpDelete("delete")]
+        public IActionResult Delete(Company company)
+        {
+            var result = _companyService.Delete(company);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpPost("update")]
         public IActionResult Update(Company company)
         {

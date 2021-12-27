@@ -54,5 +54,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+
+        [HttpDelete("delete")]
+        public IActionResult Delete(DraftJob DraftJob)
+        {
+            var result = _DraftJobService.Delete(DraftJob);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

@@ -44,5 +44,11 @@ namespace Business.Concrete
             _companyDal.Update(company);
             return new SuccessResult(Messages.CompanyUpdated);
         }
+        
+        public IResult Delete(Company company)
+        {
+            _companyDal.Delete(company);
+            return new SuccessResult(Messages.CompanyDeleted);
+        }
     }
 }
