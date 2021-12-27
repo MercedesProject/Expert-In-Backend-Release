@@ -16,6 +16,6 @@ namespace Entities.Concrete
         public String EducationStudy { get; set; }
         public DateTime EducationStartingDate { get; set; }
         public DateTime EducationEndingDate { get; set; }
-        public Boolean EducationCurrentStatus { get; set; }//diagramda yok?
+        //public Boolean EducationCurrentStatus { get; set; }//diagramda yok?
     }
 }

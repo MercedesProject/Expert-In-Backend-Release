@@ -42,7 +42,7 @@ namespace Business.Concrete
 
         public IResult Update(Experience experience)
         {
-            _experienceDal.Delete(experience);
+            _experienceDal.Update(experience);
             return new SuccessResult(Messages.ExperienceUpdated);
         }
     }

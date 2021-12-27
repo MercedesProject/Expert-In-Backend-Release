@@ -13,7 +13,7 @@ namespace Entities.Concrete
         public int EmployerId { get; set; } //FK
         public String ExperienceTitle { get; set; }
         public String ExperienceCompanyName { get; set; }//diagrammda firm name sor
-        public int ExperienceLocation { get; set; }
+        public String ExperienceLocation { get; set; }
         public DateTime ExperienceStartingDate { get; set; }
         public DateTime ExperienceEndingDate { get; set; }
         public Boolean ExperienceCurrentStatus { get; set; }//diagramda sadece  current

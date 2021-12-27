@@ -22,7 +22,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<ApplicationJob> ApplicationJobs { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
         public DbSet<Education> Educations { get; set; }
-        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<Experience> Experience { get; set; }
         public DbSet<FavoriteJob> FavoriteJobs { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Project> Projects { get; set; }
