@@ -62,11 +62,19 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        public int GetUserIdByEMail(string email)
+        {
+            int id = _userService.GetByMail(email).Id;
+            return id;
+        }
+
         public IDataResult<AccessToken> CreateAccessToken(User user)
         {
             var claims = _userService.GetClaims(user);
             var accessToken = _tokenHelper.CreateToken(user, claims);
             return new SuccessDataResult<AccessToken>(accessToken, "Token oluşturuldu");
         }
+
+        
     }
 }

@@ -11,6 +11,7 @@ namespace Entities.Concrete
     {
         public int EmployerId { get; set; } //PK
         public int UserTypeId { get; set; } //FK
+        public int UserId { get; set; } //FK
         public String EmployerName { get; set; }
         public String EmployerSurname { get; set; }
         public String EmployerTitle { get; set; }

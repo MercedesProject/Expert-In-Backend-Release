@@ -11,7 +11,7 @@ namespace Entities.Concrete
     {
         public int CompanyId { get; set; } //PK
         public int UserTypeId { get; set; } //FK
-        //public int UserId { get; set; } //FK
+        public int UserId { get; set; } //FK
         public int SectorId { get; set; } //FK
         public String CompanyName { get; set; }
         public String CompanyLocation { get; set; }
@@ -20,7 +20,9 @@ namespace Entities.Concrete
         public String CompanyWebSite { get; set; }
         public String CompanyDescription { get; set; }
         public String CompanyPhoto { get; set; }
+        public String CompanyCity { get; set; }
+        public String CompanyCountry { get; set; }
 
-        
+
     }
 }

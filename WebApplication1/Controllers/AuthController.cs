@@ -66,6 +66,7 @@ namespace WebAPI.Controllers
                     employer.EmployerSurname = userForRegisterDto.LastName;
                     employer.EmployerEMail = userForRegisterDto.Email;
                     employer.EmployerPhoneNumber = 0;
+                    employer.UserId = _authService.GetUserIdByEMail(userForRegisterDto.Email);
                     //employer.EmployerTitle = "ogrenci";
                     //employer.EmployerLocation = "ist";
                     //employer.EmployerWebSite = "bombabomba.com";
@@ -79,7 +80,9 @@ namespace WebAPI.Controllers
                     Company company = new Company();
                     company.UserTypeId = userForRegisterDto.UserTypesID;
                     company.CompanyName = userForRegisterDto.Name;
+                    company.CompanyEMail = userForRegisterDto.Email;
                     company.SectorId = 2;
+                    company.UserId = _authService.GetUserIdByEMail(userForRegisterDto.Email);
                     _companyService.Add(company);
                 }
 
