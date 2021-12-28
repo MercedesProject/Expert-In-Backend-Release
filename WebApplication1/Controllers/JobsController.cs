@@ -11,9 +11,9 @@ namespace WebAPI.Controllers
         //Loosely coupled
         //Ioc Container -- Inversion of Controller (Startup.cs)
         IJobService _jobService; //naming conventeion
-        IApplicationJobService _applicationJobService; //naming conventeion
-        IFavoriteJobService _favoriteJobService; //naming conventeion
-        IDraftJobService _draftJobService; //naming conventeion
+        //IApplicationJobService _applicationJobService; //naming conventeion
+        //IFavoriteJobService _favoriteJobService; //naming conventeion
+        //IDraftJobService _draftJobService; //naming conventeion
 
         public JobsController(IJobService jobService)
         {
@@ -26,6 +26,19 @@ namespace WebAPI.Controllers
             //dependency chain
             //IEmployerService employerService = new EmployerManager(new EfEmployerDal());
             var result = _jobService.GetJobDetails();
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("getallbycompanyid")]
+        public IActionResult GetAllByCompanyId(int id)
+        {
+            //dependency chain
+            //IEmployerService employerService = new EmployerManager(new EfEmployerDal());
+            var result = _jobService.GetAllByCompanyId(id);
             if (result.Success)
             {
                 return Ok(result.Data);
