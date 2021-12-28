@@ -67,7 +67,7 @@ namespace Business.Concrete
 
         public IDataResult<Employer> GetById(int employerId)
         {
-            return new SuccessDataResult<Employer>(_employerDal.Get(e => e.EmployerId == employerId));
+            return new SuccessDataResult<Employer>(_employerDal.Get(e => e.UserId == employerId));
         }
 
         public IDataResult<List<EmployerDetailDto>> GetEmployerDetails()
