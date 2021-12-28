@@ -14,7 +14,8 @@ namespace Business.Abstract
         IResult Add(Job Job); //void
         //void oldugu icin idataresult yapmadık (void fonksiyon oldugu icin)
         IResult Update(Job Job);
-        IResult ChangeFavStatus(Job Job);
+        IResult ChangeFavStatusAfterFav(Job Job);
+        IResult ChangeFavStatusAfterUnfav(Job Job);
         IResult Delete(Job Job);  
 
         //RESTFUL --> HTTP -->

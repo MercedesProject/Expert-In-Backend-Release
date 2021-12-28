@@ -98,7 +98,19 @@ namespace WebAPI.Controllers
         [HttpPost("updateafterfav")]
         public IActionResult UpdateAfterFav(Job job)
         {
-            var result = _jobService.ChangeFavStatus(job);
+            var result = _jobService.ChangeFavStatusAfterFav(job);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpPost("updateafterunfav")]
+        public IActionResult UpdateAfterUnfav(Job job)
+        {
+            var result = _jobService.ChangeFavStatusAfterUnfav(job);
             if (result.Success)
             {
                 return Ok(result);

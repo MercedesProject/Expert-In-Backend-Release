@@ -72,9 +72,17 @@ namespace Business.Concrete
             return new SuccessResult(Messages.JobDeleted);
         }
 
-        public IResult ChangeFavStatus(Job Job)
+
+        public IResult ChangeFavStatusAfterFav(Job Job)
         {
             Job.FavStatus = 1;
+            _jobDal.Update(Job);
+            return new SuccessResult(Messages.FavColumnChanged);
+        }
+
+        public IResult ChangeFavStatusAfterUnfav(Job Job)
+        {
+            Job.FavStatus = 0;
             _jobDal.Update(Job);
             return new SuccessResult(Messages.FavColumnChanged);
         }
