@@ -63,5 +63,6 @@ namespace Business.Constants
         public static string CompanyDeleted = "şirket silindi";
         public static string JobUpdated = "job updated";
         public static string JobDeleted = "job deleted"; //todo tugba
+        internal static string FavColumnChanged = "job tablelındaki favStatus columnı upd.";;
     }
 }

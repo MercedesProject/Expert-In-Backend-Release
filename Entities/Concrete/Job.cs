@@ -20,5 +20,6 @@ namespace Entities.Concrete
         public DateTime JobEndDate { get; set; }
         public DateTime JobApplyLastDate { get; set; }
         public int JobWeekDay { get; set; }
+        public short FavStatus { get; set; } //default 0 favlanmamış demek ---> insert fav table + set FavStatus column 1
     }
 }
