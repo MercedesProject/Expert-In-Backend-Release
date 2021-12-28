@@ -13,7 +13,8 @@ namespace Business.Abstract
         IDataResult<List<Company>> GetAll(); //void+data
         //IDataResult<List<Company>> GetAllByUserTypeId(int id);
         //IDataResult<List<CompanyDetailDto>> GetCompanyDetails();
-        IDataResult<Company> GetById(int CompanyId);
+        IDataResult<Company> GetById(int UserId);
+        IDataResult<Company> GetByCompanyId(int CompanyId);
         IResult Add(Company Company);
         IResult Update(Company company);
         IResult Delete(Company company);

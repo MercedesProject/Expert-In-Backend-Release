@@ -36,6 +36,17 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result.Message);
         }
+        
+        [HttpGet("getbycompanyid")]
+        public IActionResult GetByCompanyId(int id)
+        {
+            var result = _companyService.GetByCompanyId(id);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
 
         [HttpPost("add")]
         public IActionResult Add(Company company)

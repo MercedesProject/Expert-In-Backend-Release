@@ -34,9 +34,12 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Company>>(_companyDal.GetAll(), Messages.CompaniesListed);
         }
 
-        public IDataResult<Company> GetById(int CompanyId)
+        public IDataResult<Company> GetById(int UserId)
         {
-            return new SuccessDataResult<Company>(_companyDal.Get(j => j.UserId == CompanyId));
+            return new SuccessDataResult<Company>(_companyDal.Get(j => j.UserId == UserId));
+        }public IDataResult<Company> GetByCompanyId(int CompanyId)
+        {
+            return new SuccessDataResult<Company>(_companyDal.Get(j => j.CompanyId == CompanyId));
         }
 
         public IResult Update(Company company)
