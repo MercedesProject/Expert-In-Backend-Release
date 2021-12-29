@@ -1,6 +1,7 @@
 ﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Entities.Concrete
 {
     public class DraftJob : IEntity
     {
+        [Key]
         public int JobId { get; set; } //PK
         public int CompanyId { get; set; } //FK
         public String JobName { get; set; }
