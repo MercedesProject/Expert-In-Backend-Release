@@ -54,7 +54,7 @@ namespace Business.Concrete
 
         public IDataResult<DraftJob> GetById(int DraftJobId)
         {
-            return new SuccessDataResult<DraftJob>(_DraftJobDal.Get(j => j.DraftJobId == DraftJobId));
+            return new SuccessDataResult<DraftJob>(_DraftJobDal.Get(j => j.JobId == DraftJobId));
         }
 
         public IResult Update(DraftJob DraftJob)
@@ -63,13 +63,13 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<DraftJobDetailDto>> GetDraftJobDetails()
+        public IDataResult<List<DraftJobDetailDto>> GetJobDetails()
         {
             if (DateTime.Now.Hour == 16)
             {
                 return new ErrorDataResult<List<DraftJobDetailDto>>(Messages.MaintenanceTime);
             }
-            return new SuccessDataResult<List<DraftJobDetailDto>>(_DraftJobDal.GetDraftJobDetails());
+            return new SuccessDataResult<List<DraftJobDetailDto>>(_DraftJobDal.GetJobDetails());
         }
 
     }

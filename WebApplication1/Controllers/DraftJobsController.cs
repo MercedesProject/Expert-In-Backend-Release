@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         {
             //dependency chain
             //IEmployerService employerService = new EmployerManager(new EfEmployerDal());
-            var result = _DraftJobService.GetDraftJobDetails();
+            var result = _DraftJobService.GetJobDetails();
             if (result.Success)
             {
                 return Ok(result.Data);

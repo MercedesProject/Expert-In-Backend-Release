@@ -12,6 +12,6 @@ namespace DataAccess.Abstract
 {
     public interface IDraftJobDal : IEntityRepository<DraftJob>
     {
-        List<DraftJobDetailDto> GetDraftJobDetails();
+        List<DraftJobDetailDto> GetJobDetails();
     }
 }

@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfDraftJobDal : EfEntityRepositoryBase<DraftJob, NorthwindContext>, IDraftJobDal
     {
-        public List<DraftJobDetailDto> GetDraftJobDetails()
+        public List<DraftJobDetailDto> GetJobDetails()
         {
             using (NorthwindContext context = new NorthwindContext())
             {
@@ -23,12 +23,12 @@ namespace DataAccess.Concrete.EntityFramework
                     {
                         CompanyName = c.CompanyName,
                         CompanyLocation = c.CompanyLocation,
-                        DraftJobId = j.DraftJobId,
-                        DraftJobName = j.DraftJobName,
-                        DraftJobDescription = j.DraftJobDescription,
-                        DraftJobType = j.DraftJobType,
-                        DraftJobForm = j.DraftJobForm,
-                        DraftJobSalary = j.DraftJobSalary,
+                        JobId = j.JobId,
+                        JobName = j.JobName,
+                        JobDescription = j.JobDescription,
+                        JobType = j.JobType,
+                        JobForm = j.JobForm,
+                        JobSalary = j.JobSalary,
                         //JobStartDate = j.JobStartDate,
                         //JobEndDate = j.JobEndDate,
                         //JobApplyLastDate = j.JobApplyLastDate,
@@ -37,6 +37,5 @@ namespace DataAccess.Concrete.EntityFramework
                 return result.ToList();
             }
         }
-
     }
 }

@@ -9,7 +9,7 @@ namespace Business.Abstract
     {
         IDataResult<List<DraftJob>> GetAll(); //void+data
         IDataResult<List<DraftJob>> GetAllByCompanyId(int id);
-        IDataResult<List<DraftJobDetailDto>> GetDraftJobDetails();
+        IDataResult<List<DraftJobDetailDto>> GetJobDetails();
         IDataResult<DraftJob> GetById(int DraftJobId);
         IResult Add(DraftJob DraftJob); //void
         //void oldugu icin idataresult yapmadık (void fonksiyon oldugu icin)
