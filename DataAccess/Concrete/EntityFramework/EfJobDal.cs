@@ -33,7 +33,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  JobStartDate = j.JobStartDate,
                                  JobEndDate = j.JobEndDate,
                                  JobApplyLastDate = j.JobApplyLastDate,
-                                 JobWeekDay = j.JobWeekDay
+                                 JobWeekDay = j.JobWeekDay,
+                                 FavStatus = j.FavStatus
                                  
                              };
                 return result.ToList();

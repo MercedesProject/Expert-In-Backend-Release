@@ -22,7 +22,7 @@ namespace Entities.DTOs
         public DateTime JobEndDate { get; set; }
         public DateTime JobApplyLastDate { get; set; }
         public int JobWeekDay { get; set; }
-        public short FavStatus { get; set; }
+        public bool FavStatus { get; set; }
     }
 
     
