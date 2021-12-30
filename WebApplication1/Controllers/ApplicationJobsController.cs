@@ -12,7 +12,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ApplicationJobsController : ControllerBase
     {
-        IApplicationJobService _applicationJobService; 
+        IApplicationJobService _applicationJobService;
 
         public ApplicationJobsController(IApplicationJobService applicationJobService)
         {
@@ -45,18 +45,17 @@ namespace WebAPI.Controllers
 
         [HttpPost("add")]
         public IActionResult Add(ApplicationJob applicationJob)
+
         {
-            var userExists = _applicationJobService.DuplicateApplication(applicationJob.EmployerId);
-            if (!userExists.Success)
+            var result = _applicationJobService.Add(applicationJob);
+            if (result.Success)
             {
-                return BadRequest(userExists.Message);
-            }
-            else
-            {
-                var result = _applicationJobService.Add(applicationJob);
                 return Ok(result);
             }
+            return BadRequest(result);
+
         }
+
 
         [HttpPost("delete")]
         public IActionResult Delete(ApplicationJob applicationJob)
