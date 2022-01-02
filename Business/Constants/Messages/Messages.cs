@@ -59,6 +59,7 @@ namespace Business.Constants
 
         public static string DraftJobAdded = "İlan Taslağı Oluşturuldu."; 
         public static string DraftJobsListed = "İlan Taslağı Listelendi.";
+        public static string DraftJobsUpdated = "İlan Taslağı Güncellendi.";
 
         public static string CompanyDeleted = "şirket silindi";
         public static string JobUpdated = "job updated";

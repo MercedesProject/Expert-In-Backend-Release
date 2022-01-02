@@ -59,8 +59,8 @@ namespace Business.Concrete
 
         public IResult Update(DraftJob DraftJob)
         {
-            //eksik
-            throw new NotImplementedException();
+            _DraftJobDal.Update(DraftJob);
+            return new SuccessResult(Messages.JobUpdated);
         }
 
         public IDataResult<List<DraftJobDetailDto>> GetJobDetails()

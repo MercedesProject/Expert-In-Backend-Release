@@ -34,6 +34,11 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
+        public void DeletebyId(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             using (TContext context = new TContext())

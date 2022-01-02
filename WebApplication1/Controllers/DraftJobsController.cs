@@ -66,5 +66,16 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+        [HttpPost("update")]
+        public IActionResult Update(DraftJob DraftJob)
+        {
+            var result = _DraftJobService.Update(DraftJob);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

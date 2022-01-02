@@ -19,10 +19,9 @@ namespace WebAPI.Controllers
             _applicationJobService = applicationJobService;
         }
 
-        [HttpGet("getbyid")]
+        [HttpGet("getallbyjobid")]
         public IActionResult GetById(int id)
         {
-            ;
             var result = _applicationJobService.GetByAppliedJobId(id);
             if (result.Success)
             {
@@ -57,7 +56,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public IActionResult Delete(ApplicationJob applicationJob)
         {
             var result = _applicationJobService.Delete(applicationJob);
