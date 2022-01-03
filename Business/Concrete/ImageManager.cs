@@ -23,6 +23,13 @@ namespace Business.Concrete
 
         public IResult Add(IFormFile file, Image image)
         {
+            var imageCount = _imageDal.GetAll(i => i.UserId == image.UserId).Count;
+
+            if (imageCount > 1)
+            {
+                return new ErrorResult("bi kullanıcının bir fotosu olabilir");
+            }
+
             image.ImagePath = _fileHelper.Upload(file, PathConstants.ImagesPath);
             image.Date = DateTime.Now;
 
@@ -78,5 +85,7 @@ namespace Business.Concrete
             _imageDal.Update(image);
             return new SuccessResult(Messages.ImageUpdated);
         }
+
+       
     }
 }
