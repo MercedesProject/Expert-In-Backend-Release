@@ -23,9 +23,11 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(IFormFile file, [FromForm] CurriculumVitae curriculumVitae)
+        public IActionResult Add(IFormFile file, int userId)
         {
-            var result = _curriculumVitaeService.Add(file, curriculumVitae);
+            var cv = new CurriculumVitae();
+            cv.UserId = userId;
+            var result = _curriculumVitaeService.Add(file, cv);
             if (result.Success)
             {
                 return Ok(result);
