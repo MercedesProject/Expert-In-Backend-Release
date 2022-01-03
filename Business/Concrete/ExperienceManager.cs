@@ -37,6 +37,13 @@ namespace Business.Concrete
 
         public IDataResult<List<Experience>> GetAllByEmployerId(int id)
         {
+            var employerCount = _experienceDal.GetAll(e => e.EmployerId == id).Count;
+
+            if (employerCount == 0)
+            {
+                return new ErrorDataResult<List<Experience>>("bu kullanıcının experiencesi bulunmamaktadır.");
+            }
+
             return new SuccessDataResult<List<Experience>>(_experienceDal.GetAll(e => e.EmployerId == id));
         }
 

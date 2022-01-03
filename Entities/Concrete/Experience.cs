@@ -16,7 +16,7 @@ namespace Entities.Concrete
         public String ExperienceLocation { get; set; }
         public DateTime ExperienceStartingDate { get; set; }
         public DateTime ExperienceEndingDate { get; set; }
-        public Boolean ExperienceCurrentStatus { get; set; }//diagramda sadece  current
+        public String ExperienceCurrentStatus { get; set; }//diagramda sadece  current
         public String ExperienceDescription { get; set; }
     }
 }
