@@ -24,5 +24,6 @@ namespace Entities.Concrete
         public int JobWeekDay { get; set; }
         public bool FavStatus { get; set; } //default 0 favlanmamış demek ---> insert fav table + set FavStatus column 1
         public string ApplicationJobStatus { get; set; }
+        public int UserId { get; set; }
     }
 }
