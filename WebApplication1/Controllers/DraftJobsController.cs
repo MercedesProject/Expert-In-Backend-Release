@@ -77,5 +77,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+        [HttpGet("getallbycompanyid")]
+        public IActionResult GetAllByCompanyId(int id)
+        {
+            //dependency chain
+            //IEmployerService employerService = new EmployerManager(new EfEmployerDal());
+            var result = _DraftJobService.GetAllByCompanyId(id);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
     }
 }

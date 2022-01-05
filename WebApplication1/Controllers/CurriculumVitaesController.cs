@@ -70,7 +70,7 @@ namespace WebAPI.Controllers
         //}
 
         [HttpPost("download")]
-        public async Task<IActionResult> DownloadAsync(string curriculumVitaePath)//önemli olan sadece path strinf path de yazabilirsiniz.
+        public async Task<IActionResult> DownloadAsync(string curriculumVitaePath)
         {
             //var path = @"C:\Users\Tuğba Öğünçmert\Documents\GitHub\Expert-In-Backend-Release\WebApplication1\wwwroot\Uploads\CurriculumVitaes\Tugba_Oguncmert_CV.pdf";
             var memory = new MemoryStream();
