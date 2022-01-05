@@ -23,7 +23,6 @@ namespace Entities.Concrete
         public String EmployerGithub { get; set; }
         public String EmployerLinkedin { get; set; }
         public String EmployerAboutMe { get; set; }
-        public byte[] EmployerPhoto { get; set; }
-        public String EmployerResume { get; set; } //sor
+
     }
 }
