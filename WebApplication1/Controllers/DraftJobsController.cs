@@ -55,7 +55,7 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete(DraftJob DraftJob)
         {
             var result = _DraftJobService.Delete(DraftJob);

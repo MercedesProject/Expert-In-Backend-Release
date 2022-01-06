@@ -71,7 +71,7 @@ namespace WebAPI.Controllers
         //    return File(memory, GetMimeTypes()[ext], Path.GetFileName(path));
         //}
 
-        [HttpPost("download")]
+        [HttpGet("download")]
         public async Task<IActionResult> DownloadAsync(string curriculumVitaePath)
         {
             //var path = @"C:\Users\Tuğba Öğünçmert\Documents\GitHub\Expert-In-Backend-Release\WebApplication1\wwwroot\Uploads\CurriculumVitaes\Tugba_Oguncmert_CV.pdf";
