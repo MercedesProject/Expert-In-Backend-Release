@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public String ProjectName { get; set; }
         public DateTime ProjectStartingDate { get; set; }
         public DateTime ProjectEndingDate { get; set; }
-        public Boolean ProjectCurrentStatus { get; set; }//diagramda sadece  current
+        public String ProjectCurrentStatus { get; set; }//diagramda sadece  current
         public String ProjectDescription { get; set; }
         public String ProjectUrl { get; set; }
     }
