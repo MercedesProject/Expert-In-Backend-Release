@@ -30,6 +30,8 @@ namespace Business.Concrete
 
         public IResult Delete(FavoriteJob FavoriteJob)
         {
+            var deletedFavJob = _favoritejobDal.Get(f => f.EmployerId == FavoriteJob.EmployerId && f.JobId == FavoriteJob.JobId);
+            FavoriteJob.FavoriteJobId = deletedFavJob.FavoriteJobId;
             _favoritejobDal.Delete(FavoriteJob);
             return new SuccessResult(Messages.FavoriteJobDeleted);
         }
@@ -45,6 +47,11 @@ namespace Business.Concrete
             return new SuccessDataResult<FavoriteJob>(_favoritejobDal.Get(j => j.FavoriteJobId == FavoriteJobId));
         }
 
-        
+        public IDataResult<FavoriteJob> GetByJobId(int jobId)
+        {
+            return new SuccessDataResult<FavoriteJob>(_favoritejobDal.Get(j => j.JobId == jobId));
+        }
+
+
     }
 }

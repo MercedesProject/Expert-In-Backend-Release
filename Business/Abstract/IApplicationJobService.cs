@@ -11,6 +11,7 @@ namespace Business.Abstract
     public interface IApplicationJobService
     {
         IDataResult<List<ApplicationJob>> GetAllByEmployerId(int id); //çalışanın başvurduğu ilanlar
+        IDataResult<List<ApplicationJob>> GetAllByUserId(int id);
         IDataResult<List<ApplicationJob>> GetByAppliedJobId(int jobId);  // bir ilandaki başvuranlar
         IResult DuplicateApplication(int employerId);
         IResult Add(ApplicationJob applicationJob);

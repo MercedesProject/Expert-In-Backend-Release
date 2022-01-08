@@ -39,6 +39,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result.Message);
         }
+        [HttpGet("getbyjobid")]
+        public IActionResult GetByJobId(int id)
+        {
+            var result = _favoritejobService.GetByJobId(id);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
 
         [HttpPost("getallbyemployerid")]
         public IActionResult GetAllByEmployerId(int employerId)
@@ -46,7 +56,7 @@ namespace WebAPI.Controllers
             var result = _favoritejobService.GetAllByEmployerId(employerId);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
             return BadRequest(result);
 

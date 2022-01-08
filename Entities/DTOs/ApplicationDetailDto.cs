@@ -5,8 +5,8 @@ namespace Entities.DTOs
 {
     public class ApplicationDetailDto : IDto
     {
+        
         public int EmployerId { get; set; }
-        public String EmployerName { get; set; }
         public String JobName { get; set; } 
         public String ApplicationJobStatus { get; set; }
         public String CompanyName { get; set; }
