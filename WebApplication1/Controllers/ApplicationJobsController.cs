@@ -26,6 +26,17 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
+        [HttpGet("getjobdetails")]
+        public IActionResult GetJobDetails(int userId)
+        {
+            var result = _applicationJobService.GetJobDetails(userId);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
         [HttpPost("getallbyemployerid")]
         public IActionResult GetAllByEmployerId(int employerId)
         {

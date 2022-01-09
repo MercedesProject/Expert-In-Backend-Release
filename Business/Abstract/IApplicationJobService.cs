@@ -13,6 +13,7 @@ namespace Business.Abstract
     {
         IDataResult<List<ApplicationJob>> GetAllByEmployerId(int id); //çalışanın başvurduğu ilanlar
         IDataResult<List<ApplicationJob>> GetAllByUserId(int id);
+        IDataResult<List<ApplicationDetailDto>> GetJobDetails(int id);
         IDataResult<List<ApplicationJob>> GetByAppliedJobId(int jobId);  // bir ilandaki başvuranlar
         IDataResult<List<ApplicationDetailEmployerAndImageDto>> GetAllEmployerAndPhotoByApplicationJobDetails(int JobId);
         IResult DuplicateApplication(int employerId);

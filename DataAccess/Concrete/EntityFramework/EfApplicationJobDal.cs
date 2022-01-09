@@ -31,14 +31,14 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public List<ApplicationDetailDto> GetJobDetails()
+        public List<ApplicationDetailDto> GetJobDetails(int userId)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
                 var result = from aj in context.ApplicationJobs
                              join j in context.Jobs on aj.JobId equals j.JobId
                              join c in context.Companies on  aj.CompanyId equals c.CompanyId
-                             
+                             where aj.UserId == userId
 
                              select new ApplicationDetailDto
                              {
