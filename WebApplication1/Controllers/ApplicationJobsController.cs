@@ -49,6 +49,18 @@ namespace WebAPI.Controllers
 
         }
 
+        [HttpPost("getallemployerandphoto")]
+        public IActionResult GetAllEmployerAndPhotoByApplicationJobDetails(int JobId)
+        {
+            var result = _applicationJobService.GetAllEmployerAndPhotoByApplicationJobDetails(JobId);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+
+        }
+
         [HttpPost("add")]
         public IActionResult Add(ApplicationJob applicationJob)
 

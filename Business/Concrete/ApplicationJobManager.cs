@@ -63,5 +63,10 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<ApplicationJob>>(_applicationJobDal.GetAll(j => j.JobId == jobId));
         }
+
+        public IDataResult<List<ApplicationDetailEmployerAndImageDto>> GetAllEmployerAndPhotoByApplicationJobDetails(int jobId)
+        {
+            return new SuccessDataResult<List<ApplicationDetailEmployerAndImageDto>>(_applicationJobDal.GetAllEmployerByApplicationJobDetails(jobId));
+        }
     }
 }

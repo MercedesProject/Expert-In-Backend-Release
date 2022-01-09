@@ -23,4 +23,15 @@ namespace Entities.DTOs
         public int JobWeekDay { get; set; }
         public bool FavStatus { get; set; }
     }
+
+    public class ApplicationDetailEmployerAndImageDto : IDto
+    {
+
+        public int EmployerId { get; set; }
+        public int UserId { get; set; }
+        public String EmployerName { get; set; }
+        public String EmployerSurName { get; set; }
+        public String ImagePath { get; set; }
+        
+    }
 }
