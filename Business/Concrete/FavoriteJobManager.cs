@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +51,11 @@ namespace Business.Concrete
         public IDataResult<FavoriteJob> GetByJobId(int jobId)
         {
             return new SuccessDataResult<FavoriteJob>(_favoritejobDal.Get(j => j.JobId == jobId));
+        }
+
+        public IDataResult<List<JobDetailDto>> GetJobDetails(int employerId)
+        {
+            return new SuccessDataResult<List<JobDetailDto>>(_favoritejobDal.GetJobDetails(employerId));
         }
 
 
