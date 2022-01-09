@@ -38,6 +38,7 @@ namespace DataAccess.Concrete.EntityFramework
                 var result = from aj in context.ApplicationJobs
                              join j in context.Jobs on aj.JobId equals j.JobId
                              join c in context.Companies on  aj.CompanyId equals c.CompanyId
+                             join i in context.Images on c.UserId equals i.UserId
                              where aj.UserId == userId
 
                              select new ApplicationDetailDto
@@ -57,7 +58,43 @@ namespace DataAccess.Concrete.EntityFramework
                                  JobEndDate = j.JobEndDate,
                                  JobApplyLastDate = j.JobApplyLastDate,
                                  JobWeekDay = j.JobWeekDay,
-                                 FavStatus = j.FavStatus
+                                 FavStatus = j.FavStatus,
+                                 ImagePath = i.ImagePath
+
+                             };
+                return result.ToList();
+            }
+        }
+
+        public List<ApplicationDetailDto> GetJobDetailsForCompany(int companyId)
+        {
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                var result = from aj in context.ApplicationJobs
+                             join j in context.Jobs on aj.JobId equals j.JobId
+                             join c in context.Companies on aj.CompanyId equals c.CompanyId
+                             join i in context.Images on c.UserId equals i.UserId
+                             where aj.CompanyId == companyId
+
+                             select new ApplicationDetailDto
+                             {
+                                 CompanyLocation = c.CompanyLocation,
+                                 CompanyName = c.CompanyName,
+                                 EmployerId = aj.EmployerId,
+                                 JobName = j.JobName,
+                                 ApplicationJobStatus = aj.ApplicationJobStatus,
+                                 JobId = j.JobId,
+                                 CompanyId = j.CompanyId,
+                                 JobDescription = j.JobDescription,
+                                 JobType = j.JobType,
+                                 JobForm = j.JobForm,
+                                 JobSalary = j.JobSalary,
+                                 JobStartDate = j.JobStartDate,
+                                 JobEndDate = j.JobEndDate,
+                                 JobApplyLastDate = j.JobApplyLastDate,
+                                 JobWeekDay = j.JobWeekDay,
+                                 FavStatus = j.FavStatus,
+                                 ImagePath = i.ImagePath
 
                              };
                 return result.ToList();

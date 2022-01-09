@@ -8,6 +8,7 @@ namespace DataAccess.Abstract
     public interface IApplicationJobDal : IEntityRepository<ApplicationJob>
     {
         List<ApplicationDetailDto> GetJobDetails(int userId);
+        List<ApplicationDetailDto> GetJobDetailsForCompany(int companyId);
         List<ApplicationDetailEmployerAndImageDto> GetAllEmployerByApplicationJobDetails(int JobId);
     }
 }

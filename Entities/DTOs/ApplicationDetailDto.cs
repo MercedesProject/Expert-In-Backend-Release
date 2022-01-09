@@ -20,13 +20,13 @@ namespace Entities.DTOs
         public String JobStartDate { get; set; }
         public String JobEndDate { get; set; }
         public String JobApplyLastDate { get; set; }
+        public String ImagePath { get; set; }
         public int JobWeekDay { get; set; }
         public bool FavStatus { get; set; }
     }
 
     public class ApplicationDetailEmployerAndImageDto : IDto
     {
-
         public int EmployerId { get; set; }
         public int UserId { get; set; }
         public String EmployerName { get; set; }
@@ -34,4 +34,5 @@ namespace Entities.DTOs
         public String ImagePath { get; set; }
         
     }
+   
 }

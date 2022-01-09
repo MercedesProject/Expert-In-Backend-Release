@@ -19,6 +19,8 @@ namespace DataAccess.Concrete.EntityFramework
                 var result = from j in context.Jobs
                              join c in context.Companies
                              on j.CompanyId equals c.CompanyId
+                             join i in context.Images
+                             on c.UserId equals i.UserId
                              select new JobDetailDto
                              {
                                  CompanyName = c.CompanyName,
@@ -34,9 +36,9 @@ namespace DataAccess.Concrete.EntityFramework
                                  JobEndDate = j.JobEndDate,
                                  JobApplyLastDate = j.JobApplyLastDate,
                                  JobWeekDay = j.JobWeekDay,
-                                 FavStatus = j.FavStatus
-                                 
-                             };
+                                 FavStatus = j.FavStatus,
+                                 ImagePath = i.ImagePath
+                             }; 
                 return result.ToList();
             }
         }

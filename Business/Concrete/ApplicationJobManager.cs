@@ -82,5 +82,10 @@ namespace Business.Concrete
             _applicationJobDal.Update(applicationJob);
             return new SuccessResult();
         }
+
+        public IDataResult<List<ApplicationDetailDto>> GetJobDetailsForCompany(int companyId)
+        {
+            return new SuccessDataResult<List<ApplicationDetailDto>>(_applicationJobDal.GetJobDetailsForCompany(companyId));
+        }
     }
 }

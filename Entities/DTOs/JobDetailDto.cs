@@ -21,6 +21,7 @@ namespace Entities.DTOs
         public String JobStartDate { get; set; }
         public String JobEndDate { get; set; }
         public String JobApplyLastDate { get; set; }
+        public String ImagePath { get; set; }
         public int JobWeekDay { get; set; }
         public bool FavStatus { get; set; }
     }

@@ -59,10 +59,6 @@ namespace Business.Concrete
 
         public IDataResult<List<JobDetailDto>> GetJobDetails()
         {
-            if (DateTime.Now.Hour == 16)
-            {
-                return new ErrorDataResult<List<JobDetailDto>>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<List<JobDetailDto>>(_jobDal.GetJobDetails());
         }
 
