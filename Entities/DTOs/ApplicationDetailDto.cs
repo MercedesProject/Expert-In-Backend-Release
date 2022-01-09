@@ -17,9 +17,9 @@ namespace Entities.DTOs
         public String JobType { get; set; } //frontendbackend
         public String JobForm { get; set; } //hibrit remote işyerinde
         public int JobSalary { get; set; }//diagramda string denmiş sor
-        public DateTime JobStartDate { get; set; }
-        public DateTime JobEndDate { get; set; }
-        public DateTime JobApplyLastDate { get; set; }
+        public String JobStartDate { get; set; }
+        public String JobEndDate { get; set; }
+        public String JobApplyLastDate { get; set; }
         public int JobWeekDay { get; set; }
         public bool FavStatus { get; set; }
     }

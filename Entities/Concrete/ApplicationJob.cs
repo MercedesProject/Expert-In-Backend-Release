@@ -18,9 +18,9 @@ namespace Entities.Concrete
         public string JobType { get; set; } //frontendbackend
         public string JobForm { get; set; } //hibrit remote işyerinde
         public int JobSalary { get; set; }//diagramda string denmiş sor
-        public DateTime JobStartDate { get; set; }
-        public DateTime JobEndDate { get; set; }
-        public DateTime JobApplyLastDate { get; set; }
+        public string JobStartDate { get; set; }
+        public string JobEndDate { get; set; }
+        public string JobApplyLastDate { get; set; }
         public int JobWeekDay { get; set; }
         public bool FavStatus { get; set; } //default 0 favlanmamış demek ---> insert fav table + set FavStatus column 1
         public string ApplicationJobStatus { get; set; }
