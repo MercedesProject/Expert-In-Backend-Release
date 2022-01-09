@@ -60,7 +60,7 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpPost("getallemployerandphoto")]
+        [HttpGet("getallemployerandphoto")]
         public IActionResult GetAllEmployerAndPhotoByApplicationJobDetails(int JobId)
         {
             var result = _applicationJobService.GetAllEmployerAndPhotoByApplicationJobDetails(JobId);
