@@ -19,5 +19,7 @@ namespace Business.Abstract
         IResult DuplicateApplication(int employerId);
         IResult Add(ApplicationJob applicationJob);
         IResult Delete(ApplicationJob applicationJob);
+        IResult Accepted(ApplicationJob applicationJob);
+        IResult Declined(ApplicationJob applicationJob);
     }
 }

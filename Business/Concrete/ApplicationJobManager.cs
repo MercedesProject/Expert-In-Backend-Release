@@ -68,5 +68,19 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<ApplicationDetailEmployerAndImageDto>>(_applicationJobDal.GetAllEmployerByApplicationJobDetails(jobId));
         }
+
+        public IResult Accepted(ApplicationJob applicationJob)
+        {
+            applicationJob.ApplicationJobStatus = "Accepted";
+            _applicationJobDal.Update(applicationJob);
+            return new SuccessResult();
+        }
+
+        public IResult Declined(ApplicationJob applicationJob)
+        {
+            applicationJob.ApplicationJobStatus = "Declined";
+            _applicationJobDal.Update(applicationJob);
+            return new SuccessResult();
+        }
     }
 }

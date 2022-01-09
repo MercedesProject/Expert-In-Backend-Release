@@ -97,5 +97,31 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+
+        [HttpPost("accepted")]
+        public IActionResult Accepted(ApplicationJob applicationJob)
+        {
+            var result = _applicationJobService.Accepted(applicationJob);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+        
+        [HttpPost("declined")]
+        public IActionResult Declined(ApplicationJob applicationJob)
+        {
+            var result = _applicationJobService.Declined(applicationJob);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }
