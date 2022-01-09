@@ -1,6 +1,9 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace WebAPI.Controllers
 {
@@ -10,10 +13,11 @@ namespace WebAPI.Controllers
     public class FavoriteJobsController : ControllerBase
     {
         IFavoriteJobService _favoritejobService; //naming conventeion
-
-        public FavoriteJobsController(IFavoriteJobService favoriteJobService)
+        IJobService _jobService;
+        public FavoriteJobsController(IFavoriteJobService favoriteJobService,IJobService jobService)
         {
             _favoritejobService = favoriteJobService;
+            _jobService = jobService;
         }
 
         //[HttpGet("getall")]
@@ -61,6 +65,20 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+
+        [HttpPost("getlistallbyemloyerid")]
+        public IActionResult GetListAllByEmployerId(int employerId)
+        {
+            var favJobsList = new List<JobDetailDto>();
+            var result = _favoritejobService.GetJobDetails(employerId);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+
+        }
+
 
         [HttpPost("add")]
         public IActionResult Add(FavoriteJob favoriteJob)
