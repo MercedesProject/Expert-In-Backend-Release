@@ -53,10 +53,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ApplicationJob>>(_applicationJobDal.GetAll(j => j.UserId == id));
         }
 
-        public IDataResult<List<ApplicationDetailDto>> GetJobDetails()
+        public IDataResult<List<ApplicationDetailDto>> GetJobDetails(int userId)
         {
           
-            return new SuccessDataResult<List<ApplicationDetailDto>>(_applicationJobDal.GetJobDetails());
+            return new SuccessDataResult<List<ApplicationDetailDto>>(_applicationJobDal.GetJobDetails(userId));
         }
 
         public IDataResult<List<ApplicationJob>> GetByAppliedJobId(int jobId)
@@ -67,6 +67,20 @@ namespace Business.Concrete
         public IDataResult<List<ApplicationDetailEmployerAndImageDto>> GetAllEmployerAndPhotoByApplicationJobDetails(int jobId)
         {
             return new SuccessDataResult<List<ApplicationDetailEmployerAndImageDto>>(_applicationJobDal.GetAllEmployerByApplicationJobDetails(jobId));
+        }
+
+        public IResult Accepted(ApplicationJob applicationJob)
+        {
+            applicationJob.ApplicationJobStatus = "Accepted";
+            _applicationJobDal.Update(applicationJob);
+            return new SuccessResult();
+        }
+
+        public IResult Declined(ApplicationJob applicationJob)
+        {
+            applicationJob.ApplicationJobStatus = "Declined";
+            _applicationJobDal.Update(applicationJob);
+            return new SuccessResult();
         }
     }
 }

@@ -26,6 +26,17 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
+        [HttpGet("getjobdetails")]
+        public IActionResult GetJobDetails(int userId)
+        {
+            var result = _applicationJobService.GetJobDetails(userId);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
         [HttpPost("getallbyemployerid")]
         public IActionResult GetAllByEmployerId(int employerId)
         {
@@ -79,6 +90,32 @@ namespace WebAPI.Controllers
         public IActionResult Delete(ApplicationJob applicationJob)
         {
             var result = _applicationJobService.Delete(applicationJob);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+        [HttpPost("accepted")]
+        public IActionResult Accepted(ApplicationJob applicationJob)
+        {
+            var result = _applicationJobService.Accepted(applicationJob);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+        
+        [HttpPost("declined")]
+        public IActionResult Declined(ApplicationJob applicationJob)
+        {
+            var result = _applicationJobService.Declined(applicationJob);
+
             if (result.Success)
             {
                 return Ok(result);
