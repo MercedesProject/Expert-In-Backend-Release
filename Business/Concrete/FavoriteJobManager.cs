@@ -47,10 +47,9 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<FavoriteJob>(_favoritejobDal.Get(j => j.FavoriteJobId == FavoriteJobId));
         }
-
-        public IDataResult<FavoriteJob> GetByJobId(int jobId)
+        public IDataResult<FavoriteJob> GetByJobId(int jobId , int employerId)
         {
-            return new SuccessDataResult<FavoriteJob>(_favoritejobDal.Get(j => j.JobId == jobId));
+            return new SuccessDataResult<FavoriteJob>(_favoritejobDal.Get(j => j.JobId == jobId && j.EmployerId == j.EmployerId));
         }
 
         public IDataResult<List<JobDetailDto>> GetJobDetails(int employerId)

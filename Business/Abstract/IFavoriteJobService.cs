@@ -15,7 +15,7 @@ namespace Business.Abstract
         IDataResult<List<FavoriteJob>> GetAllByEmployerId(int id);
         //IDataResult<List<FavoriteJobDetailDto>> GetJobDetails();
         IDataResult<FavoriteJob> GetByFavoriteJobId(int FavoriteJobId);
-        IDataResult<FavoriteJob> GetByJobId(int jobId);
+        IDataResult<FavoriteJob> GetByJobId(int jobId,int employerId);
         IResult Add(FavoriteJob FavoriteJob); //void
         //void oldugu icin idataresult yapmadık (void fonksiyon oldugu icin)
         //IResult Update(FavoriteJob FavoriteJob);

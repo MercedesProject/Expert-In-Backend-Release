@@ -44,9 +44,9 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
         [HttpGet("getbyjobid")]
-        public IActionResult GetByJobId(int id)
+        public IActionResult GetByJobId(int id, int employerId)
         {
-            var result = _favoritejobService.GetByJobId(id);
+            var result = _favoritejobService.GetByJobId(id,employerId);
             if (result.Success)
             {
                 return Ok(result.Data);
