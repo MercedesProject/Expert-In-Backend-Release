@@ -57,6 +57,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<JobDetailDto>>(_favoritejobDal.GetJobDetails(employerId));
         }
 
+        public int Counter(int EmployerId)
+        {
+            var Count = _favoritejobDal.GetAll(j => j.EmployerId == EmployerId).Count();
+            return Count;
+        }
 
     }
 }

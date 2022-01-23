@@ -22,5 +22,6 @@ namespace Business.Abstract
         IResult Delete(ApplicationJob applicationJob);
         IResult Accepted(ApplicationJob applicationJob);
         IResult Declined(ApplicationJob applicationJob);
+        int Counter(int id);
     }
 }

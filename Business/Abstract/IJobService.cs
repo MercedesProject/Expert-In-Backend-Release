@@ -16,8 +16,8 @@ namespace Business.Abstract
         IResult Update(Job Job);
         IResult ChangeFavStatusAfterFav(Job Job);
         IResult ChangeFavStatusAfterUnfav(Job Job);
-        IResult Delete(Job Job);  
-
+        IResult Delete(Job Job);
+        int Counter();
         //RESTFUL --> HTTP -->
     }
 }

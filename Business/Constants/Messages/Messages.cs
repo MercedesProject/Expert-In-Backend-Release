@@ -10,7 +10,7 @@ namespace Business.Constants
 {
     public static class Messages
     {
-        public static string EmployerAdded = "Employer eklendi";
+        public static string EmployerAdded = "Employee added ";
         public static string EmployerSurnameInvalid = "Employer soyadı 3ten kısa olamaz.";
         public static string MaintenanceTime = "Sistem bakımda";
         public static string EmployersListed = "Employers listed";
@@ -51,9 +51,9 @@ namespace Business.Constants
         public static string ExperienceDeleted = "Deneyim silindi";
         public static string ExperienceUpdated = "Deneyim güncellendi"; 
 
-        public static string ApplicationReceived = "Başvurunuz alındı.";
+        public static string ApplicationReceived = "Your application has been received.";
         public static string ApplicationCancel = "Başvurunuz iptal edildi.";
-        public static string DuplicateApplication = "Bu ilana zaten başvurdunuz.";
+        public static string DuplicateApplication = "You have already applied for this job.";
 
         public static string CurriculumVitaeAdd = "Cv yüklendi";
 

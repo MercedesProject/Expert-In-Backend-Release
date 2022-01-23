@@ -82,5 +82,11 @@ namespace Business.Concrete
             _jobDal.Update(Job);
             return new SuccessResult(Messages.FavColumnChanged);
         }
+
+        public int Counter()
+        {
+            var Count = _jobDal.GetAll().Count();
+            return Count;
+        }
     }
 }
