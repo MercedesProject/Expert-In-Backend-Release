@@ -87,5 +87,12 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<ApplicationDetailDto>>(_applicationJobDal.GetJobDetailsForCompany(companyId));
         }
+
+        public int Counter(int id)
+        {
+            var Count = _applicationJobDal.GetAll(j => j.UserId == id).Count();
+            return Count;
+        }
+
     }
 }

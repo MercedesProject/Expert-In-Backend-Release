@@ -103,5 +103,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+
+        [HttpGet("counter")]
+        public IActionResult Counter(int EmployerId)
+        {
+            int result = _favoritejobService.Counter(EmployerId);
+            if (result > 0)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
     }
 }

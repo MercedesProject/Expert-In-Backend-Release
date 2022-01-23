@@ -21,7 +21,7 @@ namespace Business.Abstract
         //IResult Update(FavoriteJob FavoriteJob);
         IResult Delete(FavoriteJob FavoriteJob);
         IDataResult<List<JobDetailDto>> GetJobDetails(int employerId);
-
+        int Counter(int id);
         //RESTFUL --> HTTP -->
     }
 }
